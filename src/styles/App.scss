@@ -1,0 +1,17 @@
+// Colors
+$black: #222222;
+$grey: #888888;
+$lightgrey: #CCCCCC;
+$red: #C90000;
+
+// Media Query Widths
+$mWidth--small: 400px;
+$mWidth--medium: 600px;
+$mWidth--large: 800px;
+
+// Mixins
+@mixin mQ($mWidth) {
+    @media only screen and (max-width: $mWidth) {
+        @content;
+    }
+}
