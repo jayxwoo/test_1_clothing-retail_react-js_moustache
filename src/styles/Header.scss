@@ -1,0 +1,27 @@
+@import "./App.scss";
+
+// Header
+.header {
+    width: 100%;
+    background: $lightergrey;
+    margin-top: 1rem;
+
+    .header-cont {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5rem;
+    }
+}
+
+// My Cart
+.header__btn-myCart {
+    border: none;
+    background: none;
+    color: $grey;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    font-size: 0.7rem;
+}

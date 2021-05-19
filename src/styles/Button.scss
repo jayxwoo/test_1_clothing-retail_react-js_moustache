@@ -1,0 +1,37 @@
+@import "./App.scss";
+
+.btn {
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid $black;
+    font-size: 0.9rem;
+
+    &.btn--outline {
+        background: none;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            background: $black;
+            color: white;
+        }
+    }
+    
+    &.btn--fill {
+        background: $black;
+        color: white;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            background: none;
+            color: $black;
+        }
+    }
+
+    &.btn--medium {
+        padding: 0.5rem 1rem;
+    }
+    &.btn--large {
+        padding: 1.3rem 2rem;
+        font-size: 1rem;
+    }
+}

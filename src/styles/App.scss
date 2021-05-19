@@ -2,16 +2,21 @@
 $black: #222222;
 $grey: #888888;
 $lightgrey: #CCCCCC;
+$lightergrey: #F6F6F7;
 $red: #C90000;
 
-// Media Query Widths
-$mWidth--small: 400px;
-$mWidth--medium: 600px;
-$mWidth--large: 800px;
+// Media Query Breakpoints
+$bP--small: 400px;
+$bP--medium: 750px;
 
 // Mixins
 @mixin mQ($mWidth) {
     @media only screen and (max-width: $mWidth) {
         @content;
     }
+}
+
+// Global
+.App {
+    color: $black;
 }

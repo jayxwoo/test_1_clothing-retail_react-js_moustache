@@ -1,0 +1,110 @@
+@import "./App.scss";
+
+// Item
+.item {
+  width: 100%;
+
+  .item-cont {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    padding: 2rem 1rem;
+  }
+}
+
+// Item Image
+.item__img-cont {
+  width: 40%;
+  margin-right: 5rem;
+}
+
+// Item Info
+.item__info {
+  width: 60%;
+
+  .title {
+    font-weight: 400;
+    padding-bottom: 1rem;
+    margin-bottom: 0.2rem;
+    border-bottom: 1px solid $lightergrey;
+  }
+
+  .price {
+    font-weight: bold;
+    padding-bottom: 1rem;
+    margin-bottom: 0.2rem;
+    border-bottom: 1px solid $lightergrey;
+  }
+
+  .desc {
+    font-size: 0.8rem;
+    color: $grey;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .size-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: $grey;
+    margin-bottom: 0.75rem;
+
+    .size-label-required {
+      color: $red;
+    }
+  }
+
+  .size-btn {
+    border: 1px solid lightgrey;
+    background: none;
+    width: 40px;
+    height: 40px;
+    color: $grey;
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .btn-addToCart {
+    margin-top: 1.5rem;
+  }
+}
+
+// mQ = media query (see App.scss)
+// bP = breakpoint (see App.scss)
+@include mQ($bP--medium) {
+  // Item
+  .item-cont {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    padding: 2rem 1rem;
+
+    flex-direction: column;
+  }
+
+  // Item Image
+  .item__img-cont {
+    margin-right: 5rem;
+
+    width: 100%;
+  }
+
+  // Item Info
+  .item__info {
+    width: 100%;
+    margin-top: 2rem;
+
+    .title {
+        border: none;
+    }
+
+    .price {
+        border: none;
+    }
+  }
+}
