@@ -19,7 +19,7 @@
 - React Icons
 
 ## Notes & Improvements
-- I Could have used plain HTML/CSS/JS because it is a fairly simple web-page. Instead, I used React.js just to show all the skills I have learned up to this date.
+- I Could have used plain HTML/CSS/JS because it is a fairly simple web-page. Instead, I used React.js, Context API and Sass just to apply more skills I have learned up to this date.
 - App.scss is used as _base.scss.
 - index.scss is used as css reset.
 - Alert message UI could have improved if there was more time.
