@@ -23,8 +23,6 @@ const MyCartContextProvider = (props) => {
         sameSizeItem = null;
     };
 
-
-
     return (
         <MyCartContext.Provider value={{ myCartItems, totalNum, addItem }}>
             {props.children}

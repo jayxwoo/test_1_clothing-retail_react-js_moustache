@@ -7,7 +7,7 @@ import MiniCart from "./MiniCart.js";
 
 const Header = () => {
     const { isMobile } = useContext(IsMobileContext);
-    const { myCartItems, totalNum } = useContext(MyCartContext);
+    const { totalNum } = useContext(MyCartContext);
     const [mouseOver, setMouseOver] = useState(false);
     const [cartBtn, setCartBtn] = useState(false);
 
