@@ -84,6 +84,31 @@
   .btn-addToCart {
     margin-top: 1.5rem;
   }
+
+  .sizeAlert {
+    border: 1px solid tomato;
+    color: tomato;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+    margin-left: 1rem;
+    vertical-align: middle;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    & .arrowL {
+      margin-right: 0.5rem;
+    }
+  }
 }
 
 // mQ = media query (see App.scss)
@@ -96,14 +121,12 @@
     margin: 0 auto;
     display: flex;
     padding: 2rem 1rem;
-
     flex-direction: column;
   }
 
   // Item Image
   .item__img-cont {
     margin-right: 5rem;
-
     width: 100%;
   }
 
