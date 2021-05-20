@@ -66,6 +66,19 @@
     &:not(:last-of-type) {
       margin-right: 0.5rem;
     }
+
+    &.s--active {
+      border: 2px solid $black;
+      color: $black;
+    }
+
+    &.m--active {
+      @extend .s--active;
+    }
+
+    &.l--active {
+      @extend .s--active;
+    }
   }
 
   .btn-addToCart {

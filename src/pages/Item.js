@@ -1,7 +1,56 @@
 import "../styles/Item.scss";
-import Button from "../components/Button"
+import Button from "../components/Button";
+import { useContext, useState } from "react";
+import { MyCartContext } from "../contexts/MyCartContext";
 
 const Item = ({ data }) => {
+    const { addItem } = useContext(MyCartContext);
+    const [smallClicked, setSmallClicked] = useState(null);
+    const [mediumClicked, setMediumClicked] = useState(null);
+    const [largeClicked, setLargeClicked] = useState(null);
+    const [sizeSelected, setSizeSelected] = useState('');
+
+    const handleSizeBtn = (e) => {
+        switch (e.target.innerText.toLowerCase()) {
+            case 's':
+                setSmallClicked(true);
+                setMediumClicked(false);
+                setLargeClicked(false);
+                setSizeSelected('S');
+                break;
+            case 'm':
+                setSmallClicked(false);
+                setMediumClicked(true);
+                setLargeClicked(false);
+                setSizeSelected('M');
+                break;
+            case 'l':
+                setSmallClicked(false);
+                setMediumClicked(false);
+                setLargeClicked(true);
+                setSizeSelected('L');
+                break;
+            default:
+                setSmallClicked(false);
+                setMediumClicked(false);
+                setLargeClicked(false);
+                setSizeSelected('');
+        };
+    };
+    const handleAddBtn = () => {
+        if (!sizeSelected) {
+            alert("Please select size!");
+        } else {
+            addItem(data.title, data.price, sizeSelected, data.img, data.imgAlt);
+            setSizeSelected('');
+            setSmallClicked(false);
+            setMediumClicked(false);
+            setLargeClicked(false);
+            // alert("Added to cart");
+            window.scrollTo(0, 0);
+        }
+    };
+
     return (
         <div className="item">
             <div className="item-cont">
@@ -9,18 +58,17 @@ const Item = ({ data }) => {
                     <img className="item__img" src={data.img} alt={data.imgAlt} />
                 </div>
                 <div className="item__info">
-                    <h3 className="item__info-title title">Classic Tee</h3>
-                    <p className="item__info-price price">${data.price.toFixed(2)}</p>
-                    <p className="item__info-desc desc">{data.desc}</p>
-                    <div className="item__info-size-cont size-cont">
-                        <p className="item__info-size-label size-label">SIZE<span className="item__info-size-label-required size-label-required">*</span></p>
-                        {data.sizes.map((size) => {
-                            return (
-                                <button className="item__info-size-btn size-btn" key={size.id}>{size.size}</button>
-                            )
-                        })}
+                    <h3 className="title">{data.title}</h3>
+                    <p className="price">${data.price.toFixed(2)}</p>
+                    <p className="desc">{data.desc}</p>
+
+                    <div className="size-cont">
+                        <p className="size-label">SIZE<span className="size-label-required">*</span></p>
+                        <button className={smallClicked ? "size-btn s--active" : "size-btn"} onClick={handleSizeBtn}>S</button>
+                        <button className={mediumClicked ? "size-btn m--active" : "size-btn"} onClick={handleSizeBtn}>M</button>
+                        <button className={largeClicked ? "size-btn l--active" : "size-btn"} onClick={handleSizeBtn}>L</button>
                     </div>
-                    <Button btnStyle="btn--outline" btnSize="btn--medium" className="item__info-btn-addToCart btn-addToCart">ADD TO CART</Button>
+                    <Button btnStyle="btn--outline" btnSize="btn--medium" className="btn-addToCart" onClick={handleAddBtn}>ADD TO CART</Button>
                 </div>
             </div>
         </div>

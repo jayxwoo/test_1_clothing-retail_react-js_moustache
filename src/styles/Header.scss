@@ -12,16 +12,32 @@
         margin: 0 auto;
         display: flex;
         justify-content: flex-end;
-        padding: 0.5rem;
+        padding: 0 1rem;
     }
 }
 
 // My Cart
-.header__btn-myCart {
-    border: none;
-    background: none;
-    color: $grey;
-    cursor: pointer;
-    margin-right: 1.5rem;
-    font-size: 0.7rem;
+.header__btnCart-cont {
+    border: 1px solid $lightergrey;
+    position: relative;
+
+    &.active {
+        border: 1px solid $grey;
+    }
+
+    .btn-myCart {
+        border: none;
+        background: none;
+        color: $grey;
+        cursor: pointer;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-myCart {
+        margin-right: 0.25rem;
+        font-size: 1rem;
+    }
 }

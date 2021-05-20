@@ -1,0 +1,24 @@
+@import "./App.scss";
+
+.miniCart {
+    border: 1px solid $grey;
+    position: absolute;
+    top: 100%;
+    right: -1px;
+    width: 300px;
+    background: white;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    &.empty {
+        padding: 1rem;
+        color: $red;
+    }
+
+    &.mobile {
+        width: calc(100vw - 2rem);
+    }
+}
