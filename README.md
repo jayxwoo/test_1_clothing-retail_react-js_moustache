@@ -1,5 +1,7 @@
 # 1. Clothing Retail - Moustache Republic (React.js)
-## Screenshots
+## Info
+- url: https://jayxwoo-test-1-clothing-retail-react-js-moustache.netlify.app/
+- github: https://github.com/jayxwoo/test_1_clothing-retail_react-js_moustache
 
 ## Features
 - Responsive (mobile / desktop)
