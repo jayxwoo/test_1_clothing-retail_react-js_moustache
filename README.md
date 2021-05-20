@@ -18,8 +18,9 @@
 - Context API (React.js)
 - React Icons
 
-## Notes
-- Could have used plain HTML/CSS/JS because it is fairly simple web-page. Instead, I used React.js to show skills I have learned.
-- App.scss is used as _base.scss
+## Notes & Improvements
+- I Could have used plain HTML/CSS/JS because it is a fairly simple web-page. Instead, I used React.js just to show all the skills I have learned up to this date.
+- App.scss is used as _base.scss.
+- index.scss is used as css reset.
 - Alert message UI could have improved if there was more time.
-- Form element could have been a better option for add to card submission and use input:radio for the size selections.
+- Form element could have been a better option for adding items cart, and use input:radio for the size selections.
