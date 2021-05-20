@@ -24,3 +24,5 @@
 - index.scss is used as css reset.
 - Alert message UI could have improved if there was more time.
 - Form element could have been a better option for adding an item to the cart, and use input:radio for the size selections.
+- Combine same size item in mini cart.
+- Show item quantity next to the price in mini cart.
