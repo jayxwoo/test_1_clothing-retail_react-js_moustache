@@ -7,7 +7,7 @@ import MiniCart from "./MiniCart.js";
 
 const Header = () => {
     const { isMobile } = useContext(IsMobileContext);
-    const { myCartItems } = useContext(MyCartContext);
+    const { totalNum } = useContext(MyCartContext);
     const [mouseOver, setMouseOver] = useState(false);
     const [cartBtn, setCartBtn] = useState(false);
 
@@ -28,9 +28,9 @@ const Header = () => {
             <div className="header-cont">
                 <div className={mouseOver ? "header__btnCart-cont active" : "header__btnCart-cont"}>
                     {isMobile ? (
-                        <button className="btn-myCart" onClick={handleClick}>{isMobile ? (<FaShoppingCart className="header__icon-myCart icon-myCart" />) : "My Cart "}( {myCartItems.length} )</button>
+                        <button className="btn-myCart" onClick={handleClick}>{isMobile ? (<FaShoppingCart className="header__icon-myCart icon-myCart" />) : "My Cart "}( {totalNum} )</button>
                     ) : (
-                        <button className="btn-myCart" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{isMobile ? (<FaShoppingCart className="header__icon-myCart icon-myCart" />) : "My Cart "}( {myCartItems.length} )</button>
+                        <button className="btn-myCart" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{isMobile ? (<FaShoppingCart className="header__icon-myCart icon-myCart" />) : "My Cart "}( {totalNum} )</button>
                     )}
                     <MiniCart mouseOver={isMobile ? cartBtn : mouseOver} />
                 </div>

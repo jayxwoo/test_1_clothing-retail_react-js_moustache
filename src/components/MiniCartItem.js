@@ -8,7 +8,7 @@ const MiniCartItem = ({ item }) => {
             </div>
             <div className="info">
                 <h5 className="title">{item.title}</h5>
-                <p className="price">${item.price.toFixed(2)}</p>
+                <p className="price"><span className="quantity">{item.q} x </span>${item.price.toFixed(2)}</p>
                 <p className="size">Size: {item.size}</p>
             </div>
         </div>
