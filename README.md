@@ -19,10 +19,12 @@
 - React Icons
 
 ## Notes & Improvements
-- I Could have used plain HTML/CSS/JS because it is a fairly simple web-page. Instead, I used React.js, Context API and Sass just to apply more skills I have learned up to this date.
+- I could have used plain HTML/CSS/JS because it is a fairly simple web-page. Instead, I used React.js, Context API and Sass/SCSS just so that I can show skills I have learned up to this date.
 - App.scss is used as _base.scss.
 - index.scss is used as css reset.
-- Alert message UI could have improved if there was more time.
-- Form element could have been a better option for adding an item to the cart, and use input:radio for the size selections.
+- Form HTML element could have been used instead for size selection and 'ADD TO CART' submission.
+
+## Updated
 - Combine same size item in mini cart.
 - Show item quantity next to the price in mini cart.
+- Alert message UI.

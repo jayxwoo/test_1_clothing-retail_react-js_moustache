@@ -2,6 +2,7 @@ import "../styles/Item.scss";
 import Button from "../components/Button";
 import { useContext, useState } from "react";
 import { MyCartContext } from "../contexts/MyCartContext";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 const Item = ({ data }) => {
     const { addItem } = useContext(MyCartContext);
@@ -9,6 +10,7 @@ const Item = ({ data }) => {
     const [mediumClicked, setMediumClicked] = useState(null);
     const [largeClicked, setLargeClicked] = useState(null);
     const [sizeSelected, setSizeSelected] = useState('');
+    const [sizeAlert, setSizeAlert] = useState(false);
 
     const handleSizeBtn = (e) => {
         switch (e.target.innerText.toLowerCase()) {
@@ -39,7 +41,11 @@ const Item = ({ data }) => {
     };
     const handleAddBtn = () => {
         if (!sizeSelected) {
-            alert("Please select size!");
+            // alert("Please select size!");
+            setSizeAlert(true);
+            setTimeout(() => {
+                setSizeAlert(false);
+            }, 2000);
         } else {
             addItem(data.title, data.price, sizeSelected, data.img, data.imgAlt);
             setSizeSelected('');
@@ -63,10 +69,11 @@ const Item = ({ data }) => {
                     <p className="desc">{data.desc}</p>
 
                     <div className="size-cont">
-                        <p className="size-label">SIZE<span className="size-label-required">*</span></p>
-                        <button className={smallClicked ? "size-btn s--active" : "size-btn"} onClick={handleSizeBtn}>S</button>
-                        <button className={mediumClicked ? "size-btn m--active" : "size-btn"} onClick={handleSizeBtn}>M</button>
-                        <button className={largeClicked ? "size-btn l--active" : "size-btn"} onClick={handleSizeBtn}>L</button>
+                        <p className="size-label">SIZE<span className="required">*</span></p>
+                        <button className={smallClicked ? "size-btn active--s" : "size-btn"} onClick={handleSizeBtn}>S</button>
+                        <button className={mediumClicked ? "size-btn active--m" : "size-btn"} onClick={handleSizeBtn}>M</button>
+                        <button className={largeClicked ? "size-btn active--l" : "size-btn"} onClick={handleSizeBtn}>L</button>
+                        <p className={sizeAlert ? "sizeAlert active" : "sizeAlert"}><FaLongArrowAltLeft className="arrowL" />Choose your size!</p>
                     </div>
                     <Button btnStyle="btn--outline" btnSize="btn--medium" className="btn-addToCart" onClick={handleAddBtn}>ADD TO CART</Button>
                 </div>
