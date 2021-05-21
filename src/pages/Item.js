@@ -69,10 +69,10 @@ const Item = ({ data }) => {
                     <p className="desc">{data.desc}</p>
 
                     <div className="size-cont">
-                        <p className="size-label">SIZE<span className="size-label-required">*</span></p>
-                        <button className={smallClicked ? "size-btn s--active" : "size-btn"} onClick={handleSizeBtn}>S</button>
-                        <button className={mediumClicked ? "size-btn m--active" : "size-btn"} onClick={handleSizeBtn}>M</button>
-                        <button className={largeClicked ? "size-btn l--active" : "size-btn"} onClick={handleSizeBtn}>L</button>
+                        <p className="size-label">SIZE<span className="required">*</span></p>
+                        <button className={smallClicked ? "size-btn active--s" : "size-btn"} onClick={handleSizeBtn}>S</button>
+                        <button className={mediumClicked ? "size-btn active--m" : "size-btn"} onClick={handleSizeBtn}>M</button>
+                        <button className={largeClicked ? "size-btn active--l" : "size-btn"} onClick={handleSizeBtn}>L</button>
                         <p className={sizeAlert ? "sizeAlert active" : "sizeAlert"}><FaLongArrowAltLeft className="arrowL" />Choose your size!</p>
                     </div>
                     <Button btnStyle="btn--outline" btnSize="btn--medium" className="btn-addToCart" onClick={handleAddBtn}>ADD TO CART</Button>
