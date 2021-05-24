@@ -22,7 +22,7 @@ const Header = () => {
     const handleClick = () => {
         setCartBtn(!cartBtn);
     };
-    
+
     window.addEventListener('resize', () => {
         if (!isMobile) {
             setCartBtn(false);
@@ -32,14 +32,17 @@ const Header = () => {
     return (
         <header className="header">
             <div className="header-cont">
-                <div className={mouseOver ? "btnCart-cont active" : "btnCart-cont"}>
-                    {isMobile ? (
+                {isMobile ? (
+                    <div className={cartBtn ? "btnCart-cont active" : "btnCart-cont"}>
                         <button className="btn-myCart" onClick={handleClick}>{isMobile ? (<FaShoppingCart className="icon-myCart" />) : "My Cart "}( {totalNum} )</button>
-                    ) : (
-                        <button className="btn-myCart" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{isMobile ? (<FaShoppingCart className="icon-myCart" />) : "My Cart "}( {totalNum} )</button>
-                    )}
-                    <MiniCart mouseOver={isMobile ? cartBtn : mouseOver} />
-                </div>
+                        <MiniCart miniCartOpen={isMobile ? cartBtn : mouseOver} />
+                    </div>
+                ) : (
+                    <div className={mouseOver ? "btnCart-cont active" : "btnCart-cont"} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                        <button className="btn-myCart">{isMobile ? (<FaShoppingCart className="icon-myCart" />) : "My Cart "}( {totalNum} )</button>
+                        <MiniCart miniCartOpen={isMobile ? cartBtn : mouseOver} />
+                    </div>
+                )}
             </div>
         </header>
     );
