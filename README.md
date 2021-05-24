@@ -8,10 +8,10 @@
 - Select size
 - Add to cart
 - Show mini cart
+- Alert when size is not selected
 
-## Skills
+## Techs
 - HTML
-- CSS
 - Sass/SCSS
 - JS
 - React.js
@@ -19,12 +19,13 @@
 - React Icons
 
 ## Notes & Improvements
-- I could have used plain HTML/CSS/JS because it is a fairly simple web-page. Instead, I used React.js, Context API and Sass/SCSS just so that I can show skills I have learned up to this date.
+- I could have used plain HTML/CSS/JS because it is a fairly simple web-page. Instead, I have used React.js, Context API and Sass/SCSS just so that I can show my skills learned up to this date.
 - App.scss is used as _base.scss.
 - index.scss is used as css reset.
-- Form HTML element could have been used instead for size selection and 'ADD TO CART' submission.
+- Forms and inputs might have been a better option for when selecting the size and submitting an item to cart.
 
 ## Updated
-- Combine same size item in mini cart.
+- Combine same size items in mini cart.
 - Show item quantity next to the price in mini cart.
 - Alert message UI.
+- Retain hover on minicart component for desktop view.

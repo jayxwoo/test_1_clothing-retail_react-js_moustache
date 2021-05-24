@@ -4,12 +4,12 @@ import { MyCartContext } from "../contexts/MyCartContext";
 import MiniCartItem from "./MiniCartItem";
 import "../styles/MiniCart.scss";
 
-const MiniCart = ({ mouseOver }) => {
+const MiniCart = ({ miniCartOpen }) => {
     const { isMobile } = useContext(IsMobileContext);
     const { myCartItems } = useContext(MyCartContext);
 
     return myCartItems.length ? (
-        <div className={`miniCart ${mouseOver ? "active" : ""} ${isMobile ? "mobile" : ""}`}>
+        <div className={`miniCart ${miniCartOpen ? "active" : ""} ${isMobile ? "mobile" : ""}`}>
             <ul className="miniCart-group">
                 {myCartItems.map((myCartItem) => {
                     return (
@@ -19,7 +19,7 @@ const MiniCart = ({ mouseOver }) => {
             </ul>
         </div>
     ) : (
-        <div className={`miniCart empty ${mouseOver ? "active" : ""} ${isMobile ? "mobile" : ""}`}>
+        <div className={`miniCart empty ${miniCartOpen ? "active" : ""} ${isMobile ? "mobile" : ""}`}>
             <p className="text">Your cart is empty!</p>
         </div>
     );

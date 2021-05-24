@@ -41,7 +41,6 @@ const Item = ({ data }) => {
     };
     const handleAddBtn = () => {
         if (!sizeSelected) {
-            // alert("Please select size!");
             setSizeAlert(true);
             setTimeout(() => {
                 setSizeAlert(false);
@@ -52,7 +51,6 @@ const Item = ({ data }) => {
             setSmallClicked(false);
             setMediumClicked(false);
             setLargeClicked(false);
-            // alert("Added to cart");
             window.scrollTo(0, 0);
         }
     };
