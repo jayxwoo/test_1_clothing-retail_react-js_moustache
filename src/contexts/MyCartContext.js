@@ -23,8 +23,27 @@ const MyCartContextProvider = (props) => {
         sameSizeItem = null;
     };
 
+    const deleteItem = (id) => {
+        let item = myCartItems.find((item) => {
+            return item.id === id;
+        });
+
+        if (item.q > 1) {
+            item.q -= 1;
+            setTotalNum(totalNum - 1);
+        } else {
+            const update = myCartItems.filter((item) => {
+                return item.id !== id;
+            });
+            setMyCartItems(update);
+            setTotalNum(totalNum - 1);
+        };
+
+        item = null;
+    };
+
     return (
-        <MyCartContext.Provider value={{ myCartItems, totalNum, addItem }}>
+        <MyCartContext.Provider value={{ myCartItems, totalNum, addItem, deleteItem }}>
             {props.children}
         </MyCartContext.Provider>
     );
