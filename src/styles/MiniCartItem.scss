@@ -29,5 +29,17 @@
             font-size: 0.9rem;
         }
     }
+
+    .delete-btn {
+        align-self: flex-start;
+        display: flex;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        .delete-icon {
+            font-size: 1.25rem;
+        }
+    }
 }
 

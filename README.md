@@ -7,6 +7,7 @@
 - Responsive (mobile / desktop)
 - Select size
 - Add to cart
+- Delete from cart
 - Show mini cart
 - Alert when size is not selected
 
@@ -29,3 +30,4 @@
 - Show item quantity next to the price in mini cart.
 - Alert message UI.
 - Retain hover on minicart component for desktop view.
+- Delete items in the cart.
